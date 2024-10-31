@@ -81,6 +81,11 @@ export default function Home() {
 				.post(FOREX_DATA_API, data)
 				.then((response) => {
 					setExchangeData(response.data)
+					if (response.data.length == 0) {
+						setMessage("No data found for the given period")
+						setOpenToast(true)
+						setSeverity("info")
+					}
 				})
 				.catch((error) => {
 					setMessage(error.response.data.message)
