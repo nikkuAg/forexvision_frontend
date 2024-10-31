@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-WORKDIR /app/forex_vision_frontend
-
 RUN npm install --force
 
 RUN npm run build
